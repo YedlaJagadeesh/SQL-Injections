@@ -1,0 +1,59 @@
+The most common and exploitable vulnerability in websites is the injection vulnerability which occurs when the victim’s web site does not monitor inputs. 
+Thus, allowing the attacker to interact with the backend database. One of the most useful tools for assessing SQL injection vulnerabilities is called SQLmap. 
+It’s a Python tool that automates the reconnaissance and exploitation of multiple types of databases. In this chapter you will learn about SQL injection 
+attack against the mutillidae.com website. If you're using metasploitable, there is a possibility that you need to fix it for the mutillidae.com website.
+
+First, you need to connect to your metasploitable host using SSH. Use the user name of “mfsadmin”, and the default password which is also “mfsadmin”. 
+Once you are connected to the metasploitable machine, you need to open the configuration file of the mutillidae.com website. In this file, you need to
+make sure that the connection string is pointing to the OWASP 10 database. Once completed, you can start your SQL injection task. First, open the mutillidae.com website.
+Next, in the left menu, select the OWASP 10 item, then the Injection menu item, and pick the first SQL injection test page from the top.
+
+This page is vulnerable to SQL injection, so you need to intercept the request sent by you to the server using Burp Suite.Before clicking on the “View accounts details”,
+you need to ensure that the Burp Suite is active. Switching back to Burp Suite, you should see the contents of your request. Next, you need to save the contents to a file, 
+and after that, you don’t need Burp Suite anymore. You can close everything, and open your console. Next, type The most common  and exploitable vulnerability in websites is
+the injection vulnerability which occurs when the victim’s web site does not monitor inputs. Thus, allowing the attacker to interact with the backend database.
+
+One of the most useful tools for assessing SQL injection vulnerabilities is called SQLmap. It’s a Python tool that automates the reconnaissance and
+exploitation of multiple types of databases.In this chapter you will learn about SQL injection attack against the mutillidae.com website. If you're using metasploitable, 
+there is a possibility that you need to fix it for the mutillidae.com website. First, you need to connect to your metasploitable host using SSH. Use the user name of “mfsadmin”,
+and the default password which is also “mfsadmin”.
+
+Once you are connected to the metasploitable machine, you need to open the configuration file of the mutillidae.com website. 
+In this file, you need to make sure that the connection string is pointing to the OWASP 10 database. Once completed, you can start your SQL injection task. 
+First, open the mutillidae.com website. Next, in the left menu, select the OWASP 10 item, then the Injection menu item, and pick the first SQL injection test page from the top.
+This page is vulnerable to SQL injection, so you need to intercept the request sent by you to the server using Burp Suite. Before clicking on the “View accounts details”, you need 
+to ensure that the Burp Suite is active. Switching back to Burp Suite, you should see the contents of your request. Next, you need to save the contents to a file, and after that, 
+you don’t need Burp Suite anymore. You can close everything, and open your console.
+
+Next, type The most common and exploitable vulnerability in websites is the injection vulnerability which occurs when the victim’s web site does not monitor inputs. 
+Thus, allowing the attacker to interact with the backend database. One of the most useful tools for assessing SQL injection vulnerabilities is called SQLmap. 
+It’s a Python tool that automates the reconnaissance and exploitation of multiple types of databases. In this chapter you will learn about SQL injection attack against the mutillidae.com website.
+If you're using metasploitable, there is a possibility that you need to fix it for the mutillidae.com website. First, you need to connect to your metasploitable host using SSH.
+Use the user name of “mfsadmin”, and the default password which is also “mfsadmin”.
+
+Once you are connected to the metasploitable machine, you need to open the configuration file of the mutillidae.com website. 
+In this file, you need to make sure that the connection string is pointing to the OWASP 10 database. Once completed, you can start your SQL injection task. 
+First, open the mutillidae.com website. Next, in the left menu, select the OWASP 10 item, then the Injection menu item, and pick the first SQL injection test page from the top.
+This page is vulnerable to SQL injection, so you need to intercept the request sent by you to the server using Burp Suite. Before clicking on the “View accounts details”,
+you need to ensure that the Burp Suite is active. Switching back to Burp Suite, you should see the contents of your request. Next, you need to save the contents to a file,
+and after that, you don’t need Burp Suite anymore. You can close everything, and open your console.
+
+Next, type “sqlmap -dbs” and press enter to determine the available databases.
+The most likely database to store the applications data is the OWASP 10 database,
+therefore you will need to check the tables of that database, using the command:
+
+ command: “sqlmap --tables --database owasp –u” and press enter.
+
+The return data from executing this command should show you the available tables inside the OWASP database.
+
+Next, check the accounts table and dump the data from this table. You can list the tables in the database with the following command:
+
+command: “sqlmap -u "URL" --tables -d database_name”
+
+You can list the names of columns in a table with another command:
+
+command: “sqlmap -u "URL" --columns -d database_name -T table_name”
+
+You can dump the data using the command:
+
+command: “sqlmap -u "URL" --dump -d database_name -T table_name”
